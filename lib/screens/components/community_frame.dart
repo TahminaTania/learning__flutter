@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/screens/components/responsive_widget.dart';
 
 class CommunityFrame extends StatelessWidget {
   const CommunityFrame({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class CommunityFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: !ResponsiveWidget.isSmallScreen(context) ? 200 : 300,
       height: 200,
       color: Colors.grey,
       child: Stack(

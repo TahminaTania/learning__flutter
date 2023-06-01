@@ -1,76 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/globals.dart';
+import 'package:learning__flutter/screens/components/calender_right_container.dart';
+import 'package:learning__flutter/screens/components/responsive_widget.dart';
 
 class CalenderPage extends StatelessWidget {
   const CalenderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      //width: screenWidth,
-      height: 433.4,
+      width: size.width,
+      // height: size.height * 0.6,
       color: Colors.white,
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              //color: Colors.grey[200],
-              child: Padding(
-                padding: const EdgeInsets.all(66.62),
-                child: Image.asset("images/pana.png"),
-              ),
+      child: !ResponsiveWidget.isSmallScreen(context)
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                  Container(
+                    // color: Colors.grey[200],
+                    height: Globals.height * 0.3,
+                    width: Globals.width * 0.4,
+                    child: Image.asset("images/pana.png"),
+                  ),
+                  CalenderRightContainer(),
+                ])
+          : Column(
+              children: [
+                Container(
+                  width: ResponsiveWidget.isSmallScreen(context)
+                      ? Globals.width * 0.4
+                      : Globals.width * 0.6,
+                  //color: Colors.grey[200],
+                  child: Image.asset("images/pana.png"),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: CalenderRightContainer(),
+                ),
+              ],
             ),
-            Container(
-              // color: Colors.amber,
-              height: 308,
-              width: 661,
-              alignment: Alignment.center,
-              child: Column(
-                  //mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                        child: Text(
-                      "How to design your site footer like \n we did",
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 24.55,
-                      ),
-                    )),
-                    SizedBox(
-                      child: Text(
-                        "Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero. Donec consectetur faucibus ipsum id gravida.",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                            height: 2),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 36.27,
-                    ),
-                    SizedBox(
-                        child: InkWell(
-                            onTap: () {},
-                            child: Container(
-                              color: Colors.green[600],
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 9.74,
-                                    left: 22.27,
-                                    right: 22.27,
-                                    bottom: 9.74),
-                                child: Text(
-                                  "Learn More",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            )))
-                  ]),
-            ),
-          ]),
     );
   }
 }
+
+
+
+  // Row(
+  //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //         crossAxisAlignment: CrossAxisAlignment.center,
+  //         children: [
+  //           Container(
+  //             //color: Colors.grey[200],
+  //             child: Padding(
+  //               padding: const EdgeInsets.all(66.62),
+  //               child: Image.asset("images/pana.png"),
+  //             ),
+  //           ),
+           
+  //         ]),

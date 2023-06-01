@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learning__flutter/achivements_page.dart';
 import 'package:learning__flutter/banner_page.dart';
+import 'package:learning__flutter/main.dart';
 import 'package:learning__flutter/screens/calender_page.dart';
 import 'package:learning__flutter/screens/components/body_first.dart';
 import 'package:learning__flutter/client_page.dart';

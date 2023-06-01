@@ -1,27 +1,47 @@
 import 'package:flutter/material.dart';
 
-class AppbarPage extends StatelessWidget {
-  const AppbarPage({Key? key}) : super(key: key);
+class MyNavBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text('My App'),
+      actions: [
+        MediaQuery.of(context).size.width < 600
+            ? IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  // Handle menu button press
+                },
+              )
+            : Row(
+                children: [
+                  NavBarItem(title: 'Home'),
+                  NavBarItem(title: 'About'),
+                  NavBarItem(title: 'Contact'),
+                ],
+              ),
+      ],
+    );
+  }
+}
+
+class NavBarItem extends StatelessWidget {
+  final String title;
+
+  NavBarItem({required this.title});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Wrap(
-        //crossAxisAlignment: CrossAxisAlignment.center,
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        spacing: 50,
-        children: <Widget>[
-          ElevatedButton(onPressed: () {}, child: Text("Home")),
-          ElevatedButton(onPressed: () {}, child: Text("Features")),
-          ElevatedButton(onPressed: () {}, child: Text("Comunity")),
-          ElevatedButton(onPressed: () {}, child: Text("Blog")),
-          ElevatedButton(onPressed: () {}, child: Text("Pricing")),
-          ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                children: [Text("Register Now"), Icon(Icons.arrow_right_alt)],
-              ))
-        ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: TextButton(
+        onPressed: () {
+          // Handle navigation
+        },
+        child: Text(
+          title,
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

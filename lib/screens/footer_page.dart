@@ -38,7 +38,7 @@ class FooterPage extends StatelessWidget {
           height: 40,
         ),
         Container(
-          height: 328,
+          height: 228,
           color: Color.fromRGBO(38, 50, 56, 1),
           child: FooterFrame(),
         )
