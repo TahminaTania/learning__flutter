@@ -29,7 +29,7 @@ class ContainerBar extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 5,
+              height: 15,
             ),
             Text(
               "Our membership management software provides full automation of membership renewals and payments",

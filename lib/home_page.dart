@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning__flutter/screens/landing_page.dart';
+import 'package:learning__flutter/landing_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,8 +11,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    var screenWidth = screenSize.width;
-    var screenHeight = screenSize.height;
+    //var screenWidth = screenSize.width;
+    //var screenHeight = screenSize.height;
     String hexColor = "#4CAF4F";
     Color Regcolor =
         Color(int.parse(hexColor.substring(1, 7), radix: 16) + 0xFF000000);

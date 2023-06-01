@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/screens/components/counts_page.dart';
 
 class AchivementPage extends StatelessWidget {
   const AchivementPage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class AchivementPage extends StatelessWidget {
           children: [
             Container(
               // color: Colors.amber,
-              height: 200,
+              height: 150,
               alignment: Alignment.center,
               child: Column(
                   //mainAxisAlignment: MainAxisAlignment.start,
@@ -52,13 +53,15 @@ class AchivementPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 22.27,
+                      height: 5,
                     ),
                   ]),
             ),
             Container(
-              width: 300,
+              width: 540,
+              height: 160,
               color: Colors.red,
+              child: CountsPage(),
             )
           ]),
     );
