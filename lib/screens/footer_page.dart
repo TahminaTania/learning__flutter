@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learning__flutter/screens/components/footer_frame.dart';
+import 'package:learning__flutter/screens/components/footer_frame2.dart';
+import 'package:learning__flutter/screens/components/responsive_widget.dart';
 
 class FooterPage extends StatelessWidget {
   const FooterPage({Key? key}) : super(key: key);
@@ -38,9 +40,11 @@ class FooterPage extends StatelessWidget {
           height: 40,
         ),
         Container(
-          height: 228,
+          height: ResponsiveWidget.isLargeScreen(context) ? 300 : 400,
           color: Color.fromRGBO(38, 50, 56, 1),
-          child: FooterFrame(),
+          child: ResponsiveWidget.isLargeScreen(context)
+              ? FooterFrame()
+              : FooterFrame2(),
         )
       ]),
     );

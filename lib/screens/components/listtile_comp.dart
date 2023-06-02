@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/globals.dart';
+import 'package:learning__flutter/screens/components/responsive_widget.dart';
 
 class ListtileComp extends StatelessWidget {
   final String title, subtitle;
@@ -18,7 +20,9 @@ class ListtileComp extends StatelessWidget {
         leading: Icon(
           icon,
           color: Colors.green,
-          size: 40,
+          size: !ResponsiveWidget.isSmallScreen(context)
+              ? Globals.width * 0.04
+              : 40,
           weight: 900,
         ),
         title: Row(
@@ -27,7 +31,9 @@ class ListtileComp extends StatelessWidget {
               title,
               style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 28,
+                fontSize: !ResponsiveWidget.isSmallScreen(context)
+                    ? Globals.width * 0.02
+                    : 20,
               ),
             ),
             SizedBox(width: 8),
@@ -35,7 +41,12 @@ class ListtileComp extends StatelessWidget {
         ),
         subtitle: Text(
           subtitle,
-          style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: !ResponsiveWidget.isSmallScreen(context)
+                ? Globals.width * 0.015
+                : 10,
+          ),
         ),
       ),
     );

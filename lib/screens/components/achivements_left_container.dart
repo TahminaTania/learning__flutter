@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/globals.dart';
+import 'package:learning__flutter/screens/components/responsive_widget.dart';
 
 class AchivementsLeftContainer extends StatelessWidget {
   const AchivementsLeftContainer({Key? key}) : super(key: key);
@@ -20,7 +22,9 @@ class AchivementsLeftContainer extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
-                      fontSize: 36,
+                      fontSize: ResponsiveWidget.isSmallScreen(context)
+                          ? 36
+                          : Globals.width / 38,
                       color: Colors.black),
                   children: const <TextSpan>[
                     TextSpan(

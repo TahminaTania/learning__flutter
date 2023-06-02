@@ -62,6 +62,7 @@ class FooterFrame extends StatelessWidget {
               flex: 1,
               child: Container(
                   child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,42 +163,44 @@ class FooterFrame extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
+                  color: Colors.amber,
                   child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    child: Text(
-                      "Stay Up To Date",
-                      style: TextStyle(
-                          fontSize: Globals.width / 40,
-                          fontWeight: FontWeight.w900,
-                          height: 3,
-                          color: Colors.white),
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    width: Globals.width / 0.30,
-                    child: TextFormField(
-                      initialValue: ' ',
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Color.fromRGBO(255, 255, 255, 0.2),
-                          hintText: '',
-                          prefix: Text(
-                            'Your Email Address',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 210, 208, 208)),
-                          ),
-                          suffix: Icon(
-                            Icons.send,
-                            color: Color.fromARGB(255, 210, 208, 208),
-                          ),
-                          border: OutlineInputBorder()),
-                    ),
-                  )
-                ],
-              )),
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: Text(
+                          "Stay Up To Date",
+                          style: TextStyle(
+                              fontSize: Globals.width / 40,
+                              fontWeight: FontWeight.w900,
+                              height: 3,
+                              color: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        height: 40,
+                        width: Globals.width * 0.20,
+                        child: TextFormField(
+                          initialValue: ' ',
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Color.fromRGBO(255, 255, 255, 0.2),
+                              hintText: '',
+                              prefix: Text(
+                                'Your Email Address',
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 210, 208, 208)),
+                              ),
+                              suffix: Icon(
+                                Icons.send,
+                                color: Color.fromARGB(255, 210, 208, 208),
+                              ),
+                              border: OutlineInputBorder()),
+                        ),
+                      )
+                    ],
+                  )),
             ),
           ],
         ));
