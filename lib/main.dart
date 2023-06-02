@@ -1,8 +1,9 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:learning__flutter/globals.dart';
+import 'package:learning__flutter/landing_page.dart';
 import 'package:learning__flutter/home_page.dart';
+import 'package:learning__flutter/screens/components/responsive_appbar.dart';
+import 'package:learning__flutter/screens/components/responsive_widget.dart';
 //import 'package:learning__flutter/screens/landing_page.dart';
 //import 'package:learning__flutter/screens/components/appbar.dart';
 
@@ -19,9 +20,10 @@ class MyApp extends StatelessWidget {
     Globals.height = MediaQuery.of(context).size.height;
     Globals.width = MediaQuery.of(context).size.width;
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter website design 1',
-      home: HomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter website design 1',
+        home: ResponsiveWidget.isSmallScreen(context)
+            ? AdaptiveAppBar()
+            : HomePage());
   }
 }

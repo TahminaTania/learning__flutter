@@ -66,38 +66,34 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         SizedBox(width: screenSize.width / 20),
-                        !ResponsiveWidget.isSmallScreen(context)
-                            ? InkWell(
-                                onTap: () {},
-                                child: Container(
-                                  color: Regcolor,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 9.74,
-                                        left: 22.27,
-                                        right: 22.27,
-                                        bottom: 9.74),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text("Register Now",
-                                            style:
-                                                TextStyle(color: Colors.white)),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Icon(
-                                          Icons.arrow_right_alt,
-                                          color: Colors.white,
-                                          size: 15,
-                                        )
-                                      ],
-                                    ),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            color: Regcolor,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 9.74,
+                                  left: 22.27,
+                                  right: 22.27,
+                                  bottom: 9.74),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text("Register Now",
+                                      style: TextStyle(color: Colors.white)),
+                                  SizedBox(
+                                    width: 10,
                                   ),
-                                ),
-                              )
-                            : InkWell(onTap: () {}, child: Text("Register"))
+                                  Icon(
+                                    Icons.arrow_right_alt,
+                                    color: Colors.white,
+                                    size: 15,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   )
