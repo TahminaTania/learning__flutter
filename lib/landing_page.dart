@@ -39,7 +39,7 @@ class LandingPage extends StatelessWidget {
           ),
           CommunityUpdatesPage(),
           SizedBox(
-            height: 30,
+            height: 150,
           ),
           FooterPage()
         ]),

@@ -40,7 +40,7 @@ class FooterPage extends StatelessWidget {
           height: 40,
         ),
         Container(
-          height: ResponsiveWidget.isLargeScreen(context) ? 300 : 400,
+          height: ResponsiveWidget.isLargeScreen(context) ? 300 : null,
           color: Color.fromRGBO(38, 50, 56, 1),
           child: ResponsiveWidget.isLargeScreen(context)
               ? FooterFrame()

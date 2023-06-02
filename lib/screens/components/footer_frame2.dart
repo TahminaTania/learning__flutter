@@ -10,154 +10,154 @@ class FooterFrame2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: MediaQuery.of(context).size.width,
-        // padding: !ResponsiveWidget.isMediumScreen(context)
-        //     ? const EdgeInsets.symmetric(horizontal: 30, vertical: 10)
-        //     : null,
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Nexcent",
-                        style: TextStyle(
-                            fontSize: Globals.width / 40,
-                            fontWeight: FontWeight.w900,
-                            height: 3,
-                            color: Colors.white),
-                      ),
-                      Text(
-                        "Copyright © 2020 Nexcent ltd.",
-                        style: TextStyle(
-                            //fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            height: 2,
-                            color: Colors.white),
-                      ),
-                      Text(
-                        "All rights reserved",
-                        style: TextStyle(
-                            //fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            height: 2,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                    ],
-                  )),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                      child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Company",
-                            style: TextStyle(
-                                fontSize: Globals.width / 50,
-                                fontWeight: FontWeight.w600,
-                                height: 3,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "About Us",
-                            style: TextStyle(
-                                //fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 1,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Contact us",
-                            style: TextStyle(
-                                //fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 2,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Blog",
-                            style: TextStyle(
-                                // fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 1,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Pricing",
-                            style: TextStyle(
-                                //fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 2,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Support",
-                            style: TextStyle(
-                                fontSize: Globals.width / 50,
-                                fontWeight: FontWeight.w600,
-                                height: 3,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Help center",
-                            style: TextStyle(
-                                // fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 2,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Terms of service",
-                            style: TextStyle(
-                                //fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 2,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Legal",
-                            style: TextStyle(
-                                // fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 1,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            "Privacy policy",
-                            style: TextStyle(
-                                //  fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                height: 2,
-                                color: Colors.white),
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                        child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Nexcent",
+                          style: TextStyle(
+                              fontSize: Globals.width / 40,
+                              fontWeight: FontWeight.w900,
+                              height: 3,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "Copyright © 2020 Nexcent ltd.",
+                          style: TextStyle(
+                              fontSize: Globals.width / 50,
+                              fontWeight: FontWeight.w400,
+                              height: 2,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "All rights reserved",
+                          style: TextStyle(
+                              fontSize: Globals.width / 50,
+                              fontWeight: FontWeight.w400,
+                              height: 2,
+                              color: Colors.white),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                      ],
+                    )),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                        child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Company",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w600,
+                                  height: 3,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "About Us",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Contact us",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 2,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Blog",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Pricing",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 2,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Support",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w600,
+                                  height: 3,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Help center",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 2,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Terms of service",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 2,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Legal",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "Privacy policy",
+                              style: TextStyle(
+                                  fontSize: Globals.width / 50,
+                                  fontWeight: FontWeight.w400,
+                                  height: 2,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        )
+                      ],
+                    )),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 15,
@@ -175,7 +175,7 @@ class FooterFrame2 extends StatelessWidget {
                           child: Text(
                             "Stay Up To Date",
                             style: TextStyle(
-                                fontSize: 26,
+                                fontSize: Globals.width / 40,
                                 fontWeight: FontWeight.w900,
                                 height: 3,
                                 color: Colors.white),
@@ -183,20 +183,17 @@ class FooterFrame2 extends StatelessWidget {
                         ),
                         Container(
                           height: 40,
-                          width: Globals.width * 0.70,
+                          width: Globals.width * 0.60,
                           child: TextFormField(
                             initialValue: ' ',
                             decoration: InputDecoration(
                                 filled: true,
                                 fillColor: Color.fromRGBO(255, 255, 255, 0.2),
-                                hintText: '',
-                                prefix: Text(
-                                  'Your Email Address',
-                                  style: TextStyle(
-                                      color:
-                                          Color.fromARGB(255, 210, 208, 208)),
-                                ),
-                                suffix: Icon(
+                                // hintText: 'Your Email Address',
+                                prefixText: 'Your Email Address',
+                                prefixStyle: TextStyle(
+                                    color: Color.fromARGB(255, 210, 208, 208)),
+                                suffixIcon: Icon(
                                   Icons.send,
                                   color: Color.fromARGB(255, 210, 208, 208),
                                 ),
@@ -207,7 +204,9 @@ class FooterFrame2 extends StatelessWidget {
                           height: 20,
                         ),
                         Container(
-                          width: Globals.width,
+                          width: ResponsiveWidget.isSmallScreen(context)
+                              ? Globals.width * 0.7
+                              : Globals.width * 0.5,
                           height: 36,
                           child: SocialIcons(),
                         ),
