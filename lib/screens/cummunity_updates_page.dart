@@ -26,11 +26,14 @@ class CommunityUpdatesPage extends StatelessWidget {
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w600,
                       fontSize: 36,
-                      height: 3),
+                      height: ResponsiveWidget.isSmallScreen(context) ? 1 : 3),
                 )),
                 SizedBox(
+                  height: ResponsiveWidget.isSmallScreen(context) ? 30 : 5,
+                ),
+                SizedBox(
                   width: 628,
-                  height: 72,
+                  //height: 72,
                   child: Text(
                     "The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​",
                     textAlign: TextAlign.center,
@@ -40,7 +43,10 @@ class CommunityUpdatesPage extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         height: 1),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: ResponsiveWidget.isSmallScreen(context) ? 30 : 20,
+                ),
               ])),
               Container(
                   child: !ResponsiveWidget.isSmallScreen(context)

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/globals.dart';
 import 'package:learning__flutter/screens/components/footer_frame.dart';
 import 'package:learning__flutter/screens/components/footer_frame2.dart';
 import 'package:learning__flutter/screens/components/responsive_widget.dart';
@@ -16,7 +17,9 @@ class FooterPage extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Inter',
             fontWeight: FontWeight.w600,
-            fontSize: 44,
+            fontSize: ResponsiveWidget.isSmallScreen(context)
+                ? Globals.width / 15
+                : Globals.width / 30,
           ),
         )),
         SizedBox(

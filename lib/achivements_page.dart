@@ -33,7 +33,7 @@ class AchivementPage extends StatelessWidget {
                   AchivementsLeftContainer(),
                   Container(
                     width: Globals.width * 0.9,
-                    height: 165,
+                   // height: Globals.width < 400 ? null : 165,
                     // color: Colors.red,
                     child: Center(child: CountsPage()),
                   )

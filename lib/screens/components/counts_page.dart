@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning__flutter/globals.dart';
 import 'package:learning__flutter/screens/components/listtile_comp.dart';
 import 'package:learning__flutter/screens/components/responsive_widget.dart';
 
@@ -10,6 +11,7 @@ class CountsPage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.3,
+      //width: Globals.width > 400 ? Globals.width : null,
       //color: Colors.amber,
       child: Column(children: [
         Row(

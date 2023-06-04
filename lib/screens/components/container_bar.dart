@@ -11,7 +11,7 @@ class ContainerBar extends StatelessWidget {
       padding: const EdgeInsets.all(18.0),
       child: Container(
         height: ResponsiveWidget.isSmallScreen(context)
-            ? Globals.height * 0.15
+            ? Globals.height * 0.18
             : 150.73,
         width: ResponsiveWidget.isSmallScreen(context)
             ? Globals.width * 0.7

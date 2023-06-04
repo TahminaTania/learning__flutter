@@ -22,7 +22,7 @@ class ListtileComp extends StatelessWidget {
           color: Colors.green,
           size: !ResponsiveWidget.isSmallScreen(context)
               ? Globals.width * 0.04
-              : 40,
+              : Globals.width * 0.07,
           weight: 900,
         ),
         title: Row(
@@ -33,7 +33,7 @@ class ListtileComp extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 fontSize: !ResponsiveWidget.isSmallScreen(context)
                     ? Globals.width * 0.02
-                    : 20,
+                    : Globals.width * 0.04,
               ),
             ),
             SizedBox(width: 8),
