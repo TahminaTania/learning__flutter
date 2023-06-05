@@ -9,7 +9,7 @@ class AchivementsLeftContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.amber,
-      height: Globals.width < 400 ? null : 150,
+      // height: Globals.width < 400 ? null : 150,
       alignment: Alignment.center,
       child: Padding(
         padding: !ResponsiveWidget.isSmallScreen(context)
