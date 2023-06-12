@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning__flutter/globals.dart';
 import 'package:learning__flutter/landing_page.dart';
 import 'package:learning__flutter/home_page.dart';
 import 'package:learning__flutter/screens/components/responsive_appbar.dart';
 import 'package:learning__flutter/screens/components/responsive_widget.dart';
+
+import 'login/cubit/login_cubit.dart';
 //import 'package:learning__flutter/screens/landing_page.dart';
 //import 'package:learning__flutter/screens/components/appbar.dart';
 
@@ -24,6 +27,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter website design 1',
         home: ResponsiveWidget.isSmallScreen(context)
             ? AdaptiveAppBar()
-            : HomePage());
+            : BlocProvider(
+                create: (context) => LoginCubit(),
+                child: HomePage(),
+              ));
   }
 }

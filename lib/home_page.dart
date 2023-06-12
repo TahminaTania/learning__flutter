@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning__flutter/landing_page.dart';
+import 'package:learning__flutter/login/cubit/login_cubit.dart';
+import 'package:learning__flutter/pages/log_in_page.dart';
 import 'package:learning__flutter/screens/components/appbar.dart';
 import 'package:learning__flutter/screens/components/res_practice1.dart';
 import 'package:learning__flutter/screens/components/responsive_widget.dart';
@@ -67,7 +70,15 @@ class _HomePageState extends State<HomePage> {
                         ),
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BlocProvider(
+                                          create: (context) => LoginCubit(),
+                                          child: LoginPage(),
+                                        )));
+                          },
                           child: Container(
                             color: Regcolor,
                             child: Padding(
@@ -79,8 +90,13 @@ class _HomePageState extends State<HomePage> {
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text("Register Now",
-                                      style: TextStyle(color: Colors.white)),
+                                  BlocBuilder<LoginCubit, LoginState>(
+                                    builder: (context, state) {
+                                      return Text('${state.email}',
+                                          style:
+                                              TextStyle(color: Colors.white));
+                                    },
+                                  ),
                                   SizedBox(
                                     width: 10,
                                   ),
