@@ -16,6 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final name = ModalRoute.of(context)?.settings.arguments as String?;
     var screenSize = MediaQuery.of(context).size;
     //var screenWidth = screenSize.width;
     //var screenHeight = screenSize.height;
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   BlocBuilder<LoginCubit, LoginState>(
                                     builder: (context, state) {
-                                      return Text('${state.email}',
+                                      return Text(' ${name ?? 'Register Now'}',
                                           style:
                                               TextStyle(color: Colors.white));
                                     },

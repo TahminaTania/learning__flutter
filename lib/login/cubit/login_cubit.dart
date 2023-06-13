@@ -1,10 +1,34 @@
+// import 'package:bloc/bloc.dart';
+// import 'package:meta/meta.dart';
+
+// part 'login_state.dart';
+
+// class LoginCubit extends Cubit<LoginState> {
+//   LoginCubit() : super(LoginInitial(email: ''));
+//   void loggedIn(newvalue) => emit(LoginInitial(email: newvalue));
+//   void inValid() => emit(UserInValid());
+// }
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'dart:async';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(LoginInitial(email: ''));
-  void loggedIn(newvalue) => emit(LoginInitial(email: newvalue));
-  void inValid() => emit(UserInValid());
+  LoginCubit() : super(LoginInitial());
+
+  void login(String email, String password, String name) {
+    final emailRegExp = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+    final isValidEmail = emailRegExp.hasMatch(email);
+
+    if (password.length > 8 && isValidEmail) {
+      emit(LoginLoading());
+
+      Timer(Duration(seconds: 2), () {
+        emit(LoginSuccess());
+      });
+    } else {
+      emit(LoginError('Invalid email or password'));
+    }
+  }
 }

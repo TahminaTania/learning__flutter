@@ -18,6 +18,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController emailControl = TextEditingController();
   TextEditingController passControl = TextEditingController();
+  TextEditingController nameControl = TextEditingController();
   String emailV = "";
   @override
   void dispose() {
@@ -29,6 +30,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loginCubit = BlocProvider.of<LoginCubit>(context);
     return Material(
       child: Scaffold(
         body: SafeArea(
@@ -44,15 +46,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   BlocBuilder<LoginCubit, LoginState>(
                     builder: (context, state) {
-                      if (state is UserInValid) {
-                        return SizedBox(
-                          child: Text(
-                            state.errorMsg,
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        );
+                      if (state is LoginError) {
+                        return Text(state.errorMessage,
+                            style: TextStyle(color: Colors.red));
                       } else {
-                        return SizedBox();
+                        return Container();
                       }
                     },
                   ),
@@ -61,14 +59,16 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(
                     child: TextField(
+                      controller: nameControl,
+                      decoration: InputDecoration(hintText: 'UserName'),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    child: TextField(
                       controller: emailControl,
-                      onChanged: (val) {
-                        setState(() {
-                          // emailV = val;
-                        });
-                        // BlocProvider.of<UserBloc>(context).add(
-                        //     TextFieldHandel(emailControl.text, passControl.text));
-                      },
                       decoration: InputDecoration(hintText: 'Email address'),
                     ),
                   ),
@@ -77,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(
                     child: TextField(
+                      controller: passControl,
                       decoration: InputDecoration(hintText: 'Password'),
                     ),
                   ),
@@ -86,22 +87,33 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     child: ElevatedButton(
                         onPressed: () {
-                          context.read<LoginCubit>().loggedIn(emailV);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SecondPage()));
+                          final email = emailControl.text;
+                          final password = passControl.text;
+                          final name = nameControl.text;
+                          loginCubit.login(email, password, name);
                         },
                         child: Text("Log In")),
                   ),
                   SizedBox(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: BlocBuilder<LoginCubit, LoginState>(
-                        builder: (context, state) {
-                          return Text("user is ${state.email}");
-                        },
-                      ),
+                    height: 5,
+                  ),
+                  SizedBox(
+                    child: BlocBuilder<LoginCubit, LoginState>(
+                      builder: (context, state) {
+                        if (state is LoginLoading) {
+                          return CircularProgressIndicator();
+                        } else if (state is LoginSuccess) {
+                          // Navigate to the HomePage
+                          Future.delayed(Duration(seconds: 2), () {
+                            Navigator.pushReplacementNamed(context, '/home',
+                                arguments: nameControl.text);
+                          });
+
+                          return Text('Login successful!');
+                        } else {
+                          return SizedBox();
+                        }
+                      },
                     ),
                   )
                 ],

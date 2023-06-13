@@ -22,14 +22,31 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Globals.height = MediaQuery.of(context).size.height;
     Globals.width = MediaQuery.of(context).size.width;
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter website design 1',
-        home: ResponsiveWidget.isSmallScreen(context)
-            ? AdaptiveAppBar()
-            : BlocProvider(
-                create: (context) => LoginCubit(),
-                child: HomePage(),
-              ));
+    return BlocProvider(
+      create: (context) => LoginCubit(),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter website design 1',
+          routes: {
+            '/home': (context) => HomePage(),
+          },
+          home: App()),
+    );
+  }
+}
+
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ResponsiveWidget.isSmallScreen(context)
+          ? AdaptiveAppBar()
+          : BlocProvider(
+              create: (context) => LoginCubit(),
+              child: HomePage(),
+            ),
+    );
   }
 }
