@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning__flutter/landing_page.dart';
 import 'package:learning__flutter/login/cubit/login_cubit.dart';
+import 'package:learning__flutter/pages/blog/blog_page.dart';
+import 'package:learning__flutter/pages/blog/cubit/fetchdata_cubit.dart';
+import 'package:learning__flutter/pages/blog/repository.dart';
 import 'package:learning__flutter/pages/log_in_page.dart';
 import 'package:learning__flutter/screens/components/appbar.dart';
 import 'package:learning__flutter/screens/components/res_practice1.dart';
@@ -63,7 +66,16 @@ class _HomePageState extends State<HomePage> {
                         ),
                         SizedBox(width: screenSize.width / 20),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BlocProvider(
+                                          create: (context) =>
+                                              FetchdataCubit(UserRepository()),
+                                          child: BlogPage(),
+                                        )));
+                          },
                           child: Text(
                             'Blog',
                             style: TextStyle(color: Colors.black),
